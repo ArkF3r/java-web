@@ -36,9 +36,14 @@
 	    <version>4.0.0</version>
 	    <scope>provided</scope>
 	</dependency>
-
-
-    
+	
+	<!-- Own dependencies -->
+	<dependency>
+	    <groupId>java-web-parent</groupId>
+	    <artifactId>app-service</artifactId>
+	    <version>1.0.0-SNAPSHOT</version>
+	</dependency>
+	    
   </dependencies>
   <build>
     <finalName>session-web-app</finalName>

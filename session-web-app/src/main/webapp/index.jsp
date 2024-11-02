@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Java WebApi</title>
 </head>
 <body>
-
+	<form method="get" action="<%=request.getContextPath()%>/api/product">
+		<input name="id"/>
+		<button>Get product</button>
+	</form>
 </body>
 </html>

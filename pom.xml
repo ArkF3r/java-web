@@ -6,13 +6,13 @@
   <packaging>pom</packaging>
   <name>java-web-parent</name>
   <description>Parent project</description>
-  
   <properties>
-  	<maven.compiler.source>21</maven.compiler.source>
-  	<maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
   </properties>
-  
   <modules>
     <module>session-web-app</module>
+    <module>app-service</module>
+    <module>app-repository</module>
   </modules>
 </project>
