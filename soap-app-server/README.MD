@@ -2,9 +2,9 @@
 
 Once project is compiled, you can start the service using this command:
 
-    ```bash
+```bash
     java --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED -jar PATH/compiled_jar.jar
-    ```
+```
 
 This start web service and you will see next lines on the console:
 
