@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>java-web-parent</groupId>
+    <artifactId>java-web-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>soap-app-client</artifactId>
+  <name>soap-app-client</name>
+  
+  <dependencies>
+        <!-- JAX-WS API for SOAP client generation -->
+        <dependency>
+            <groupId>jakarta.xml.ws</groupId>
+            <artifactId>jakarta.xml.ws-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <!-- JAXB Dependencies for Java 9+ -->
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        
+        <dependency>
+		    <groupId>java-web-parent</groupId>
+		    <artifactId>app-repository</artifactId>
+		    <version>1.0.0-SNAPSHOT</version>
+		</dependency>
+        
+    </dependencies>
+    
+     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-codegen-plugin</artifactId>
+                <version>4.0.5</version>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <wsdlOptions>
+                                <wsdlOption>
+                                    <wsdl>http://localhost:8000/?wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>com.example.soap.client</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                            </wsdlOptions>
+                        </configuration>
+                        <goals>
+                            <goal>wsdl2java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!-- Include JAXB libraries explicitly -->
+                <dependencies>
+                    <!-- https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
+					<dependency>
+					    <groupId>jakarta.xml.bind</groupId>
+					    <artifactId>jakarta.xml.bind-api</artifactId>
+					    <version>4.0.2</version>
+					</dependency>
+			        <!-- CXF HTTP Transport Dependency -->
+			        <dependency>
+			            <groupId>org.apache.cxf</groupId>
+			            <artifactId>cxf-rt-transports-http</artifactId>
+			            <version>4.0.5</version>
+			        </dependency>			        
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+  
+</project>

@@ -14,5 +14,7 @@
     <module>session-web-app</module>
     <module>app-service</module>
     <module>app-repository</module>
+    <module>soap-app-server</module>
+    <module>soap-app-client</module>
   </modules>
 </project>

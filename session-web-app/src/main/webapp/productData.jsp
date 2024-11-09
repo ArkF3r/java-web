@@ -2,6 +2,8 @@
 
 <html>
 	<head>
+		<meta charset="UTF-8">
+		<title>Java WebApi Session</title>
 	</head>
 	<body>
 		<%
